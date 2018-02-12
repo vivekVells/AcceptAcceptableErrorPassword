@@ -31,15 +31,19 @@ public class AAEP {
 	}
 	
 	public Boolean isIgnoredCaseSensitive(String pass, String errPass) {
-		if (pass.toLowerCase().equals(errPass.toLowerCase())) {
-			return true;
-		} else {
-			return false;
-		}
+		return pass.equalsIgnoreCase(errPass) ? true : false; 
+	}
+	
+	public void matchNearByKeys(String pass, String errPass) {
+		// which to use hashmap or json thingy
+		// lets go with json thingy.... 
+		// I have to complete the JSONConverter project to proceed here.... hmmm.... link: https://github.com/vivekVells/JSONConverter
+		
 	}
 	
 	public String validateInputExtended(String pass, String errPass) {		
 		if (isIgnoredCaseSensitive(pass, errPass)) {
+			matchNearByKeys(pass, errPass);
 			return "MATCHED. ACCEPTED";
 		} else {
 			return "NOT MATCHED. DENIED";
